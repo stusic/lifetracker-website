@@ -1,0 +1,62 @@
+[
+  {
+    "q": "Is LifeTracker server-side only?",
+    "a": "Core tracking runs entirely on the server — it doesn't require anything installed on a player's machine. A small optional companion mod adds a one-click \"Copy Link\" button to the death screen; without it, you can still be tracked, you just won't have that convenience button yet (an in-game chat command fallback is planned)."
+  },
+  {
+    "q": "Do players need to install anything?",
+    "a": "Not for tracking itself. If the server owner has the companion client mod set up (published on Steam Workshop), it downloads automatically and adds the death-screen copy button. No account or sign-up is ever required to view a record."
+  },
+  {
+    "q": "Does it affect server performance?",
+    "a": "It's designed to stay lightweight: positions are sampled on a bounded schedule, batched, and uploaded asynchronously so the game loop is never blocked waiting on the network. That said, the project hasn't yet run formal load tests at its target scale of 60–100 concurrent players — see the Server Performance section for exactly what's measured versus assumed."
+  },
+  {
+    "q": "What happens when a character dies?",
+    "a": "The server confirms the death, finalizes that life's record, classifies the cause of death when it can (infected, fall, or self-inflicted — otherwise \"Unknown\"), and generates an unlisted link to the record. Disconnecting without dying does not end a life — reconnecting resumes the same one."
+  },
+  {
+    "q": "Can players share their journeys?",
+    "a": "Yes — every completed life gets its own unlisted link. Anyone with the link can view the route and summary; it's never listed publicly or indexed by search engines."
+  },
+  {
+    "q": "What information is collected?",
+    "a": "Timestamped position samples during a life, your in-game name (captured once, at the start of that life), approximate life duration, and a death-cause classification when one can be determined. See the Privacy section for full detail, including what is explicitly not collected."
+  },
+  {
+    "q": "Can server owners disable tracking?",
+    "a": "Yes. Tracking is opt-in at the server level — it only runs on servers where the owner has installed and configured the mod."
+  },
+  {
+    "q": "Can a player opt out individually?",
+    "a": "Not yet. An in-game opt-out command is planned but not built. Right now, if your server owner has LifeTracker enabled, your life is tracked while you play there. This is an acknowledged gap, not a hidden one — see the Privacy section."
+  },
+  {
+    "q": "Are existing characters tracked?",
+    "a": "Tracking begins the next time a character spawns in after the mod is installed and running — it doesn't retroactively reconstruct history for lives that already happened."
+  },
+  {
+    "q": "Is historical data retained?",
+    "a": "Completed life records are kept indefinitely until deleted. Records that never reach a completed state (e.g. abandoned mid-life) expire automatically after 30 days."
+  },
+  {
+    "q": "How do I delete my record?",
+    "a": "Right now, deletion requests go through your server owner or the project operator directly — there isn't a self-service delete button yet. This is on the roadmap."
+  },
+  {
+    "q": "How do I report a problem?",
+    "a": "Reach out to the project directly for now — a public issue tracker isn't set up yet."
+  },
+  {
+    "q": "Is LifeTracker free?",
+    "a": "Yes."
+  },
+  {
+    "q": "Can I contribute?",
+    "a": "The project's source isn't published publicly yet. If you're a server owner interested in running LifeTracker or getting involved, reach out directly."
+  },
+  {
+    "q": "Is this an official Bohemia Interactive product?",
+    "a": "No. LifeTracker is an independent, unofficial community mod for DayZ. Chernarus map imagery used in internal development is Bohemia Interactive's property; a licensing request for any public use is pending."
+  }
+]

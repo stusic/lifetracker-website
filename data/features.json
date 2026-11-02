@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Automatic life tracking",
+    "status": "available",
+    "desc": "Every character life is tracked server-side from spawn to confirmed death — no player setup required."
+  },
+  {
+    "title": "Unlisted share links",
+    "status": "available",
+    "desc": "Every completed life gets its own private, unguessable link. Never listed publicly, never indexed by search engines."
+  },
+  {
+    "title": "Interactive route viewer",
+    "status": "available",
+    "desc": "Pan, zoom up to 24x, and scrub or play back the full route on a timeline — on desktop or mobile."
+  },
+  {
+    "title": "Death-cause detection",
+    "status": "available",
+    "desc": "Classifies confirmed deaths as infected, fall, or self-inflicted where the evidence supports it, and labels the rest \"Unknown\" rather than guessing."
+  },
+  {
+    "title": "\"Copy Link\" death-screen button",
+    "status": "available",
+    "desc": "An optional companion client mod adds a one-click button to grab your record link the moment you die."
+  },
+  {
+    "title": "In-game chat link retrieval",
+    "status": "planned",
+    "desc": "A chat command fallback for getting your link without the companion mod installed."
+  },
+  {
+    "title": "In-game opt-out",
+    "status": "planned",
+    "desc": "A chat command for players to stop being tracked on a server that has LifeTracker enabled."
+  },
+  {
+    "title": "Self-service server registration",
+    "status": "planned",
+    "desc": "A dashboard for server owners to onboard themselves, instead of manual, by-request setup."
+  },
+  {
+    "title": "Configurable route fidelity",
+    "status": "under-consideration",
+    "desc": "Letting server owners tune how often positions are sampled against server cost."
+  },
+  {
+    "title": "Player-vs-player death attribution",
+    "status": "under-consideration",
+    "desc": "Detecting and showing when a death was caused by another player. No reliable signal confirmed yet."
+  }
+]

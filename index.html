@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LifeTracker — Every survivor has a story</title>
+<meta name="description" content="LifeTracker is a server-side DayZ mod that records a survivor's journey and lets you revisit it on an interactive map after death.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><circle cx=%2216%22 cy=%2216%22 r=%227%22 fill=%22%23ff3b30%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gugi&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="site-nav">
+  <div class="container">
+    <a class="brand" href="#top"><span class="dot"></span>Life Tracker</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">What is it</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#demo">Demo</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="#privacy">Privacy</a></li>
+      <li><a href="#install">Install</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-tag">Server-side DayZ mod &middot; beta</span>
+        <h1>Every survivor<br>has a story.</h1>
+        <p class="hero-sub">LifeTracker preserves the journey behind every survivor, transforming a lifetime in DayZ into a route you can explore, revisit, and share.</p>
+        <div class="hero-ctas">
+          <a href="#demo" class="btn btn-primary">See a sample journey</a>
+          <a href="#install" class="btn btn-ghost">Install on your server</a>
+        </div>
+        <p class="hero-oss">Currently in closed beta &middot; independent, unofficial DayZ project.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M20 0H0V20" fill="none" stroke="#2a2f3a" stroke-width="1"/>
+            </pattern>
+          </defs>
+          <rect width="400" height="300" fill="#0b0d11"/>
+          <rect width="400" height="300" fill="url(#grid)"/>
+          <path d="M30 240 Q 90 200 110 150 T 180 100 Q 220 90 260 60 T 350 40" fill="none" stroke="#ff3b30" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="30" cy="240" r="5" fill="#6ea8ff"/>
+          <circle cx="350" cy="40" r="6" fill="#ff3b30"/>
+          <circle cx="350" cy="40" r="11" fill="none" stroke="#ff3b30" stroke-width="1.5" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What is LifeTracker</span>
+        <h2>A memory for every life you live in DayZ</h2>
+        <p>Most DayZ lives end quietly — a death, a respawn, and the story is gone. LifeTracker changes that by quietly recording where you went, then giving you back a map of the journey after you die.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>What it records</h3>
+          <p>Your position over time during one character's life, from spawn to confirmed death — plus a death-cause classification when the evidence supports one.</p>
+        </div>
+        <div class="about-card">
+          <h3>What you get back</h3>
+          <p>A private, shareable link to an interactive map of that life's route, with a scrubbable timeline and your in-game name and survival time.</p>
+        </div>
+        <div class="about-card">
+          <h3>Why server owners like it</h3>
+          <p>Zero setup for players, no accounts, no performance impact beyond lightweight background sampling, and a feature your community can't get anywhere else.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How it works</span>
+        <h2>From spawn to shareable map</h2>
+        <p>This is an explanatory diagram only — the website itself never talks to the live tracking service.</p>
+      </div>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="step-icon">🖥️</div>
+          <h4>DayZ server</h4>
+          <p>Runs the server-side mod alongside your normal server.</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="step-icon">📍</div>
+          <h4>LifeTracker mod</h4>
+          <p>Samples position on a bounded schedule, watches for death.</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="step-icon">☁️</div>
+          <h4>Backend service</h4>
+          <p>Receives, stores, and finalizes the life once death is confirmed.</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="step-icon">🗺️</div>
+          <h4>Interactive map</h4>
+          <p>A private link renders the finished route for anyone who has it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Features</span>
+        <h2>What's actually built today</h2>
+        <p>Clearly labeled — available now, planned, or still under consideration. Nothing here is aspirational marketing.</p>
+      </div>
+      <div class="feature-grid" id="featureGrid"></div>
+    </div>
+  </section>
+
+  <!-- DEMO -->
+  <section id="demo">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">See it in action</span>
+        <h2>A sample journey</h2>
+        <p>This is illustrative demonstration data on a stylized map — not a real DayZ location or a real player's record.</p>
+      </div>
+      <div class="demo-wrap">
+        <div class="demo-banner" id="demoBanner">DEMONSTRATION DATA</div>
+        <div class="demo-body">
+          <div class="demo-map">
+            <svg id="demoSvg" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stylized demonstration map with a sample survivor route"></svg>
+          </div>
+          <div class="demo-stats">
+            <dl>
+              <dt>Survivor</dt><dd id="statName">—</dd>
+              <dt>Duration</dt><dd id="statDuration">—</dd>
+              <dt>Distance</dt><dd id="statDistance">—</dd>
+              <dt>Cause of death</dt><dd id="statCause">—</dd>
+            </dl>
+          </div>
+          <div class="demo-timeline">
+            <button class="demo-play" id="demoPlay" aria-label="Play route playback">▶</button>
+            <input type="range" id="demoScrub" min="0" max="20" step="1" value="0" aria-label="Scrub through the journey timeline">
+            <span class="demo-time" id="demoTime">0:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section id="roadmap">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Roadmap</span>
+        <h2>Where this is headed</h2>
+        <p>No committed delivery dates — statuses reflect actual project state, not promises.</p>
+      </div>
+      <div class="roadmap-legend">
+        <span><i style="background:var(--status-complete)"></i>Complete</span>
+        <span><i style="background:var(--status-progress)"></i>In progress</span>
+        <span><i style="background:var(--status-planned)"></i>Planned</span>
+        <span><i style="background:var(--status-consider)"></i>Under consideration</span>
+      </div>
+      <div class="roadmap-grid" id="roadmapGrid"></div>
+    </div>
+  </section>
+
+  <!-- PRIVACY -->
+  <section id="privacy">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Privacy and data</span>
+        <h2>What's collected, and what isn't</h2>
+      </div>
+      <div class="info-block">
+        <h3>What's collected</h3>
+        <ul>
+          <li>Timestamped position samples during one character's life.</li>
+          <li>Your in-game name, captured once at the start of that life (not re-checked if you rename mid-life).</li>
+          <li>A death-cause classification when the evidence supports one — otherwise labeled "Unknown."</li>
+          <li>Life duration and start/end positions.</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h3>What's never collected</h3>
+        <ul>
+          <li>Chat or voice content.</li>
+          <li>Inventory contents.</li>
+          <li>Your raw Steam/platform ID in anything public — internal identifiers are hashed and never exposed through the public link.</li>
+        </ul>
+      </div>
+      <div class="info-block">
+        <h3>Who can see a record</h3>
+        <p>Anyone holding a record's private link can view it — the same way an unlisted video link works. Records are never listed publicly or indexed by search engines. Links are revocable.</p>
+      </div>
+      <div class="info-block">
+        <h3>Retention and deletion</h3>
+        <p>Completed life records are kept until deleted. Records that never reach a completed state (e.g. the server crashed mid-life) expire automatically after 30 days.</p>
+        <p class="callout"><strong>Current limitation:</strong> deletion requests go through your server owner or the project directly — there is no self-service "delete my record" button yet.</p>
+      </div>
+      <div class="info-block">
+        <h3>Opting out</h3>
+        <p>Tracking is opt-in at the <em>server</em> level — it only runs where the server owner has installed and enabled it.</p>
+        <p class="callout"><strong>Current limitation:</strong> there is no individual player opt-out yet. An in-game command is planned (see the Roadmap), but today, if your server owner has LifeTracker enabled, your life is tracked while you play there. We're flagging this directly rather than overstating what's built.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERFORMANCE -->
+  <section id="performance">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Server performance</span>
+        <h2>Will this affect my server?</h2>
+        <p>It's designed to be lightweight, but formal load testing at scale hasn't happened yet. Here's exactly what's measured versus assumed.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Setting</th><th>Starting value</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Position sample interval</td><td>Every 3 seconds</td><td>Default, not yet independently tuned at scale</td></tr>
+            <tr><td>Movement threshold to record</td><td>8–10 metres</td><td>Default, reduces near-duplicate points</td></tr>
+            <tr><td>Stationary heartbeat</td><td>Every 30 seconds</td><td>Preserves approximate dwell time</td></tr>
+            <tr><td>Upload transport</td><td>Asynchronous, batched, retried</td><td>Confirmed working end-to-end in production</td></tr>
+            <tr><td>Blocking game-loop calls</td><td>None</td><td>Design constraint, upheld in the current implementation</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="callout" style="margin-top: var(--space-3);"><strong>Honest status:</strong> the project targets 60–100 concurrent players, but no formal server-cost profiling has been run at that scale yet. The mod has been confirmed working end-to-end on a real production server with real deaths, but a per-player-count resource table isn't available — we didn't want to publish invented numbers. This will be updated once real measurements exist.</p>
+    </div>
+  </section>
+
+  <!-- INSTALL -->
+  <section id="install">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Installation</span>
+        <h2>Setting up LifeTracker on your server</h2>
+        <p>LifeTracker is currently a closed, manually-onboarded beta — there's no self-service signup yet. The steps below are the real technical process once you're onboarded.</p>
+      </div>
+      <div class="callout" style="max-width:720px;margin:0 auto var(--space-5);">
+        <strong>Getting a credential:</strong> during this beta, server credentials are issued manually by the project — there's no automatic sign-up page yet. Reach out via the links below to get set up.
+      </div>
+      <div class="install-steps" style="max-width:720px;margin:0 auto;">
+        <div class="install-step">
+          <div class="num">1</div>
+          <div>
+            <h3>Install the server-side mod</h3>
+            <p>Load the LifeTracker server mod on your DayZ dedicated server (via <code>-serverMod=</code> or your host's server-mods folder, depending on how you manage mods).</p>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="num">2</div>
+          <div>
+            <h3>Install the client mod (optional)</h3>
+            <p>The companion client mod adds a one-click "Copy Link" button on the death screen. It's published to the Steam Workshop so players auto-download it if your server requires it — tracking itself works without it.</p>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="num">3</div>
+          <div>
+            <h3>Create your config file</h3>
+            <p>Create <code>config.json</code> in the mod's profile directory with the API endpoint and the credential issued to you:</p>
+            <pre><button class="copy-btn" data-copy-target="configSnippet">Copy</button><code id="configSnippet">{
+  "apiBaseUrl": "https://&lt;your-issued-endpoint&gt;",
+  "webBaseUrl": "https://&lt;your-issued-endpoint&gt;",
+  "serverCredential": "&lt;your-issued-credential&gt;"
+}</code></pre>
+            <p>This file is never committed anywhere and should be kept private — treat the credential like a password.</p>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="num">4</div>
+          <div>
+            <h3>Start your server and verify</h3>
+            <p>Boot your server and check its log for a LifeTracker startup line confirming the mod loaded and connected. Run one test life (spawn, move around, die) and confirm a link is produced.</p>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="num">5</div>
+          <div>
+            <h3>Troubleshooting</h3>
+            <p>If the mod logs a fatal error at boot, double-check <code>config.json</code> exists in the right profile folder and that the credential matches exactly what was issued — the mod intentionally fails loudly rather than tracking silently with a broken config.</p>
+          </div>
+        </div>
+        <div class="install-step">
+          <div class="num">6</div>
+          <div>
+            <h3>Updating and uninstalling</h3>
+            <p>Update by replacing the mod files with a newer release when one is published. Uninstall by removing the mod from your load line/folder — no separate cleanup step is required on your server; existing records remain reachable by their links.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Common questions</h2>
+      </div>
+      <div class="faq-list" id="faqList"></div>
+    </div>
+  </section>
+
+  <!-- LINKS -->
+  <section id="links">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Project links</span>
+        <h2>Get involved</h2>
+      </div>
+      <div class="links-grid" id="linksGrid"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p class="disclaimer">LifeTracker is an independent, unofficial DayZ community project and is not affiliated with or endorsed by Bohemia Interactive. DayZ is a trademark of Bohemia Interactive a.s.</p>
+  <p>&copy; <span id="year"></span> LifeTracker.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
