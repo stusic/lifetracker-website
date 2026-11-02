@@ -12,7 +12,7 @@ The public marketing/informational site for LifeTracker (a DayZ server-side mod)
   - `features.json`: feature list + status (`available` / `planned` / `under-consideration`).
   - `roadmap.json`: roadmap categories and items.
   - `faq.json`: FAQ entries.
-  - `links.json`: project links (GitHub, Workshop, Patreon, contact). Flip `"available": true` and fill in `href` once each resource is real. `repo` and `workshop` are also rendered as a quick-link row in the Install section (`js/main.js`'s `installQuickLinks`), so updating them here updates both places.
+  - `links.json`: project links (GitHub, Workshop, Patreon, Discord, Releases). Flip `"available": true` and fill in `href` once each resource is real. `repo` and `workshop` are also rendered as a quick-link row in the Install section (`js/main.js`'s `installQuickLinks`), so updating them here updates both places.
 
 ## The Demo section embeds a real, live record
 
