@@ -2,6 +2,7 @@
   "repo": { "label": "Source on GitHub", "href": "#", "available": false, "note": "Coming soon — not public yet" },
   "issues": { "label": "Report an Issue", "href": "#", "available": false, "note": "Coming soon" },
   "releases": { "label": "Releases", "href": "#", "available": false, "note": "Coming soon" },
-  "workshop": { "label": "Steam Workshop", "href": "#", "available": false, "note": "Coming soon" },
+  "workshop": { "label": "Steam Workshop", "href": "#", "available": false, "note": "Published — link coming soon" },
+  "patreon": { "label": "Support on Patreon", "href": "#", "available": false, "note": "Coming soon" },
   "contact": { "label": "Contact the Project", "href": "#", "available": false, "note": "Coming soon — add a contact method before launch" }
 }
