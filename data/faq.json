@@ -1,7 +1,9 @@
 [
   {
     "q": "Is LifeTracker server-side only?",
-    "a": "Core tracking runs entirely on the server; it doesn't require anything installed on a player's machine. A small optional companion mod adds a one-click \"Copy Link\" button to the death screen. Without it, you can still be tracked, you just won't have that convenience button yet (an in-game chat command fallback is planned)."
+    "a": "Core tracking runs entirely on the server; it doesn't require anything installed on a player's machine. A small optional companion mod adds a one-click \"Copy Link\" button to the death screen. Without it, you can still be tracked, you just won't have that convenience button yet (an in-game chat command fallback is planned).",
+    "image": "assets/img/RespawnScreen.png",
+    "imageAlt": "The DayZ death screen on the LifeTracker beta test server, showing the companion mod's real \"Click here to copy the Life Tracker link\" button."
   },
   {
     "q": "Do players need to install anything?",

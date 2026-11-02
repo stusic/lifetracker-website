@@ -76,7 +76,10 @@
         <button class="faq-q" aria-expanded="false" aria-controls="faq-a-${i}">
           ${item.q}
         </button>
-        <div class="faq-a" id="faq-a-${i}"><p>${item.a}</p></div>
+        <div class="faq-a" id="faq-a-${i}">
+          <p>${item.a}</p>
+          ${item.image ? `<img class="faq-img" src="${item.image}" alt="${item.imageAlt || ''}" loading="lazy">` : ''}
+        </div>
       </div>
     `).join('');
     list.querySelectorAll('.faq-item').forEach(el => {

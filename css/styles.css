@@ -256,6 +256,21 @@ th { color: var(--text-dim); text-transform: uppercase; font-size: 0.72rem; lett
 }
 .copy-btn:hover { color: var(--text); border-color: var(--accent); }
 .copy-btn[data-copied="true"] { color: var(--status-complete); border-color: var(--status-complete); }
+.copy-btn.inline { position: static; margin-left: 0.6em; }
+
+/* ---------- try it yourself ---------- */
+.try-it {
+  max-width: 640px; margin: var(--space-4) auto 0;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: var(--space-4);
+}
+.try-it h3 { font-size: 1.05rem; }
+.try-it > p { color: var(--text-dim); font-size: 0.9rem; }
+.server-info { display: grid; grid-template-columns: auto 1fr; gap: 0.5em var(--space-3); margin: var(--space-2) 0 0; }
+.server-info dt { color: var(--text-dim); font-size: 0.85rem; align-self: center; }
+.server-info dd { margin: 0; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; }
+.server-info code { font-family: var(--font-mono); background: var(--surface-raised); padding: 0.2em 0.5em; border-radius: 4px; }
+@media (max-width: 500px) { .server-info { grid-template-columns: 1fr; } .server-info dt { margin-top: 0.6em; } }
 
 /* ---------- faq ---------- */
 .faq-list { max-width: 760px; margin: 0 auto; }
@@ -267,9 +282,10 @@ th { color: var(--text-dim); text-transform: uppercase; font-size: 0.72rem; lett
 }
 .faq-q::after { content: "+"; color: var(--accent); font-size: 1.2rem; transition: transform var(--transition); }
 .faq-item[data-open="true"] .faq-q::after { transform: rotate(45deg); }
-.faq-a { max-height: 0; overflow: hidden; transition: max-height var(--transition); color: var(--text-dim); font-size: 0.92rem; }
-.faq-a p { padding-bottom: var(--space-3); margin: 0; }
-.faq-item[data-open="true"] .faq-a { max-height: 400px; }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 240ms ease; color: var(--text-dim); font-size: 0.92rem; }
+.faq-a p { padding-bottom: var(--space-2); margin: 0; }
+.faq-img { width: 100%; max-width: 560px; border-radius: var(--radius-sm); border: 1px solid var(--border); display: block; margin-bottom: var(--space-3); }
+.faq-item[data-open="true"] .faq-a { max-height: 900px; }
 
 /* ---------- links / footer ---------- */
 .quick-links { display: flex; gap: var(--space-2); justify-content: center; flex-wrap: wrap; margin-top: var(--space-3); }
