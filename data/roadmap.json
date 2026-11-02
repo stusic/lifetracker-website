@@ -5,11 +5,11 @@
       "items": [
         { "title": "Server-side life tracking", "status": "complete", "note": "Spawn, death, disconnect/reconnect, and respawn are all tracked automatically. No player action required." },
         { "title": "Death-cause detection", "status": "complete", "note": "Distinguishes infected, fall, and self-inflicted deaths. Unclassified deaths are labeled \"Unknown\" rather than guessed." },
-        { "title": "Durable upload queue across server restarts", "status": "planned", "note": "Currently in-memory only — a server crash can lose a small window of unsent data. A disk-backed queue that survives restarts is planned." },
-        { "title": "Starvation / dehydration death detection", "status": "under-consideration", "note": "An approach has been greenlit for testing but not yet built or confirmed reliable." },
-        { "title": "Player-vs-player death detection", "status": "under-consideration", "note": "No reliable detection signal has been confirmed yet. No timeline is committed." },
-        { "title": "In-game opt-out command", "status": "planned", "note": "Players will be able to opt out of tracking with a chat command. Not yet built — see the Privacy section." },
-        { "title": "Mid-life event tracking", "status": "under-consideration", "note": "Capturing notable in-life moments — going unconscious, broken legs, weapon fire — not just spawn/death. No design work has started on this." }
+        { "title": "Durable upload queue across server restarts", "status": "planned", "note": "A disk-backed queue so a server crash doesn't lose data that hasn't been uploaded yet." },
+        { "title": "Starvation / dehydration death detection", "status": "under-consideration", "note": "Detecting deaths caused by starvation or dehydration using health readings at the moment of death." },
+        { "title": "Player-vs-player death detection", "status": "under-consideration", "note": "Detecting and attributing deaths caused by another player." },
+        { "title": "In-game opt-out command", "status": "planned", "note": "A chat command that lets a player opt out of tracking on a server where it's enabled." },
+        { "title": "Mid-life event tracking", "status": "under-consideration", "note": "Capturing notable in-life moments, like going unconscious, breaking a leg, or firing a weapon, in addition to spawn and death." }
       ]
     },
     {
@@ -17,9 +17,9 @@
       "items": [
         { "title": "Interactive route viewer", "status": "complete", "note": "Pan, zoom (up to 24x), reset view, and a scrub/playback timeline. Works on desktop and touch devices." },
         { "title": "Vector route rendering", "status": "complete", "note": "Routes stay crisp at any zoom level instead of blurring." },
-        { "title": "Licensed map tiling", "status": "planned", "note": "The current map image is a flat photo that softens at extreme zoom. Real map tiling (e.g. Leaflet) would fix this once map licensing is resolved." },
+        { "title": "Licensed map tiling", "status": "planned", "note": "Real map tiling (for example Leaflet) so the map stays sharp at any zoom level." },
         { "title": "Additional official and community map support", "status": "planned", "note": "Supporting more DayZ maps beyond Chernarus, both official Bohemia releases and popular community maps." },
-        { "title": "Additional map themes and colors", "status": "under-consideration", "note": "Alternate visual themes/color palettes for the route viewer. No design work has started on this." }
+        { "title": "Additional map themes and colors", "status": "under-consideration", "note": "Alternate visual themes and color palettes for the route viewer." }
       ]
     },
     {
@@ -27,7 +27,7 @@
       "items": [
         { "title": "\"Copy Link\" death-screen button", "status": "complete", "note": "A lightweight companion mod adds a one-click button to copy your record link when you die." },
         { "title": "In-game chat command fallback", "status": "planned", "note": "A !mylink-style command to retrieve your most recent link without the companion mod." },
-        { "title": "Push notification before respawn", "status": "under-consideration", "note": "Exploring faster, more automatic link delivery at the moment of death." }
+        { "title": "Push notification before respawn", "status": "under-consideration", "note": "Automatic link delivery at the moment of death, before respawn." }
       ]
     },
     {
@@ -36,22 +36,22 @@
         { "title": "Manual server onboarding", "status": "complete", "note": "Server owners are issued a credential directly by the project during this beta." },
         { "title": "Self-service server registration", "status": "planned", "note": "A dashboard for server owners to register and manage their own server without manual onboarding." },
         { "title": "Configurable sampling / route fidelity", "status": "under-consideration", "note": "Letting server admins tune tracking frequency against server cost." },
-        { "title": "Automated retention cleanup", "status": "planned", "note": "The expiry job that clears abandoned, never-finished records exists but isn't yet on an automatic schedule." }
+        { "title": "Automated retention cleanup", "status": "planned", "note": "Running the cleanup job that clears abandoned, never-finished records on a regular automatic schedule." }
       ]
     },
     {
       "name": "Data and Export",
       "items": [
         { "title": "Retention and deletion policy", "status": "complete", "note": "Completed records are kept until deleted; abandoned/incomplete ones expire automatically after 30 days." },
-        { "title": "Self-service record deletion", "status": "planned", "note": "Deletion requests currently go through the server owner or project operator — there's no self-service \"delete my record\" button yet." },
-        { "title": "Personal data export", "status": "under-consideration", "note": "No committed plan yet; noted as a possible future addition." }
+        { "title": "Self-service record deletion", "status": "planned", "note": "A \"delete my record\" button, instead of going through the server owner or project operator." },
+        { "title": "Personal data export", "status": "under-consideration", "note": "Exporting your own recorded data in a personal, downloadable format." }
       ]
     },
     {
       "name": "Community Features",
       "items": [
-        { "title": "Public source code and issue tracker", "status": "planned", "note": "The project isn't yet published as an open repository. This is intended, not abandoned." },
-        { "title": "Community sharing / galleries", "status": "under-consideration", "note": "No design work has started on this." }
+        { "title": "Public source code and issue tracker", "status": "planned", "note": "A public, open-source repository with an issue tracker for bug reports and feature requests." },
+        { "title": "Community sharing / galleries", "status": "under-consideration", "note": "A place to browse and share notable journeys from across the community." }
       ]
     }
   ]

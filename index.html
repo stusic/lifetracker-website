@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LifeTracker — Every survivor has a story</title>
+<title>LifeTracker: Every survivor has a story</title>
 <meta name="description" content="LifeTracker is a server-side DayZ mod that records a survivor's journey and lets you revisit it on an interactive map after death.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><circle cx=%2216%22 cy=%2216%22 r=%227%22 fill=%22%23ff3b30%22/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,12 +71,12 @@
       <div class="section-head">
         <span class="eyebrow">What is LifeTracker</span>
         <h2>A memory for every life you live in DayZ</h2>
-        <p>Most DayZ lives end quietly — a death, a respawn, and the story is gone. LifeTracker changes that by quietly recording where you went, then giving you back a map of the journey after you die.</p>
+        <p>Most DayZ lives end quietly: a death, a respawn, and the story is gone. LifeTracker changes that by quietly recording where you went, then giving you back a map of the journey after you die.</p>
       </div>
       <div class="about-grid">
         <div class="about-card">
           <h3>What it records</h3>
-          <p>Your position over time during one character's life, from spawn to confirmed death — plus a death-cause classification when the evidence supports one.</p>
+          <p>Your position over time during one character's life, from spawn to confirmed death, plus a death-cause classification when the evidence supports one.</p>
         </div>
         <div class="about-card">
           <h3>What you get back</h3>
@@ -96,7 +96,7 @@
       <div class="section-head">
         <span class="eyebrow">How it works</span>
         <h2>From spawn to shareable map</h2>
-        <p>This is an explanatory diagram only — the website itself never talks to the live tracking service.</p>
+        <p>This is an explanatory diagram only. The website itself never talks to the live tracking service.</p>
       </div>
       <div class="flow">
         <div class="flow-step">
@@ -132,7 +132,7 @@
       <div class="section-head">
         <span class="eyebrow">Features</span>
         <h2>What's actually built today</h2>
-        <p>Clearly labeled — available now, planned, or still under consideration. Nothing here is aspirational marketing.</p>
+        <p>Clearly labeled: available now, planned, or still under consideration. Nothing here is aspirational marketing.</p>
       </div>
       <div class="feature-grid" id="featureGrid"></div>
     </div>
@@ -144,10 +144,10 @@
       <div class="section-head">
         <span class="eyebrow">See it in action</span>
         <h2>A real survivor's journey</h2>
-        <p>This is a real track from one of the owner's own characters, live on LifeTracker right now — not a mockup.</p>
+        <p>This is a real track from one of the owner's own characters, live on LifeTracker right now, not a mockup.</p>
       </div>
       <div class="demo-wrap">
-        <div class="demo-banner">LIVE — REAL RECORDED LIFE</div>
+        <div class="demo-banner">LIVE: REAL RECORDED LIFE</div>
         <div class="demo-frame">
           <iframe
             src="https://dayz-life-tracker-api.onrender.com/XlAIcpAVErMIMNIxOqrKQ4fKcnoUavg9"
@@ -157,7 +157,7 @@
             referrerpolicy="no-referrer"></iframe>
         </div>
       </div>
-      <p class="demo-note">Hosted on a free-tier service — if it looks blank for a few seconds on first load, it's waking up, not broken.</p>
+      <p class="demo-note">Hosted on a free-tier service. If it looks blank for a few seconds on first load, it's waking up, not broken.</p>
     </div>
   </section>
 
@@ -167,7 +167,7 @@
       <div class="section-head">
         <span class="eyebrow">Roadmap</span>
         <h2>Where this is headed</h2>
-        <p>No committed delivery dates — statuses reflect actual project state, not promises.</p>
+        <p>No committed delivery dates. Statuses reflect actual project state, not promises.</p>
       </div>
       <div class="roadmap-legend">
         <span><i style="background:var(--status-complete)"></i>Complete</span>
@@ -191,7 +191,7 @@
         <ul>
           <li>Timestamped position samples during one character's life.</li>
           <li>Your in-game name, captured once at the start of that life (not re-checked if you rename mid-life).</li>
-          <li>A death-cause classification when the evidence supports one — otherwise labeled "Unknown."</li>
+          <li>A death-cause classification when the evidence supports one, otherwise labeled "Unknown."</li>
           <li>Life duration and start/end positions.</li>
         </ul>
       </div>
@@ -200,21 +200,21 @@
         <ul>
           <li>Chat or voice content.</li>
           <li>Inventory contents.</li>
-          <li>Your raw Steam/platform ID in anything public — internal identifiers are hashed and never exposed through the public link.</li>
+          <li>Your raw Steam/platform ID in anything public. Internal identifiers are hashed and never exposed through the public link.</li>
         </ul>
       </div>
       <div class="info-block">
         <h3>Who can see a record</h3>
-        <p>Anyone holding a record's private link can view it — the same way an unlisted video link works. Records are never listed publicly or indexed by search engines. Links are revocable.</p>
+        <p>Anyone holding a record's private link can view it, the same way an unlisted video link works. Records are never listed publicly or indexed by search engines. Links are revocable.</p>
       </div>
       <div class="info-block">
         <h3>Retention and deletion</h3>
         <p>Completed life records are kept until deleted. Records that never reach a completed state (e.g. the server crashed mid-life) expire automatically after 30 days.</p>
-        <p class="callout"><strong>Current limitation:</strong> deletion requests go through your server owner or the project directly — there is no self-service "delete my record" button yet.</p>
+        <p class="callout"><strong>Current limitation:</strong> deletion requests go through your server owner or the project directly; there is no self-service "delete my record" button yet.</p>
       </div>
       <div class="info-block">
         <h3>Opting out</h3>
-        <p>Tracking is opt-in at the <em>server</em> level — it only runs where the server owner has installed and enabled it.</p>
+        <p>Tracking is opt-in at the <em>server</em> level; it only runs where the server owner has installed and enabled it.</p>
         <p class="callout"><strong>Current limitation:</strong> there is no individual player opt-out yet. An in-game command is planned (see the Roadmap), but today, if your server owner has LifeTracker enabled, your life is tracked while you play there. We're flagging this directly rather than overstating what's built.</p>
       </div>
     </div>
@@ -240,7 +240,7 @@
           </tbody>
         </table>
       </div>
-      <p class="callout" style="margin-top: var(--space-3);"><strong>Honest status:</strong> the project targets 60–100 concurrent players, but no formal server-cost profiling has been run at that scale yet. The mod has been confirmed working end-to-end on a real production server with real deaths, but a per-player-count resource table isn't available — we didn't want to publish invented numbers. This will be updated once real measurements exist.</p>
+      <p class="callout" style="margin-top: var(--space-3);"><strong>Honest status:</strong> the project targets 60–100 concurrent players, but no formal server-cost profiling has been run at that scale yet. The mod has been confirmed working end-to-end on a real production server with real deaths, but a per-player-count resource table isn't available, since we didn't want to publish invented numbers. This will be updated once real measurements exist.</p>
     </div>
   </section>
 
@@ -250,11 +250,11 @@
       <div class="section-head">
         <span class="eyebrow">Installation</span>
         <h2>Setting up LifeTracker on your server</h2>
-        <p>LifeTracker is currently a closed, manually-onboarded beta — there's no self-service signup yet. The steps below are the real technical process once you're onboarded.</p>
+        <p>LifeTracker is currently a closed, manually-onboarded beta; there's no self-service signup yet. The steps below are the real technical process once you're onboarded.</p>
         <div class="quick-links" id="installQuickLinks"></div>
       </div>
       <div class="callout" style="max-width:720px;margin:0 auto var(--space-5);">
-        <strong>Getting a credential:</strong> during this beta, server credentials are issued manually by the project — there's no automatic sign-up page yet. Reach out via the links below to get set up.
+        <strong>Getting a credential:</strong> during this beta, server credentials are issued manually by the project; there's no automatic sign-up page yet. Reach out via the links below to get set up.
       </div>
       <div class="install-steps" style="max-width:720px;margin:0 auto;">
         <div class="install-step">
@@ -268,7 +268,7 @@
           <div class="num">2</div>
           <div>
             <h3>Install the client mod (optional)</h3>
-            <p>The companion client mod adds a one-click "Copy Link" button on the death screen. It's published to the Steam Workshop so players auto-download it if your server requires it — tracking itself works without it.</p>
+            <p>The companion client mod adds a one-click "Copy Link" button on the death screen. It's published to the Steam Workshop so players auto-download it if your server requires it. Tracking itself works without it.</p>
           </div>
         </div>
         <div class="install-step">
@@ -281,7 +281,7 @@
   "webBaseUrl": "https://&lt;your-issued-endpoint&gt;",
   "serverCredential": "&lt;your-issued-credential&gt;"
 }</code></pre>
-            <p>This file is never committed anywhere and should be kept private — treat the credential like a password.</p>
+            <p>This file is never committed anywhere and should be kept private; treat the credential like a password.</p>
           </div>
         </div>
         <div class="install-step">
@@ -295,14 +295,14 @@
           <div class="num">5</div>
           <div>
             <h3>Troubleshooting</h3>
-            <p>If the mod logs a fatal error at boot, double-check <code>config.json</code> exists in the right profile folder and that the credential matches exactly what was issued — the mod intentionally fails loudly rather than tracking silently with a broken config.</p>
+            <p>If the mod logs a fatal error at boot, double-check <code>config.json</code> exists in the right profile folder and that the credential matches exactly what was issued. The mod intentionally fails loudly rather than tracking silently with a broken config.</p>
           </div>
         </div>
         <div class="install-step">
           <div class="num">6</div>
           <div>
             <h3>Updating and uninstalling</h3>
-            <p>Update by replacing the mod files with a newer release when one is published. Uninstall by removing the mod from your load line/folder — no separate cleanup step is required on your server; existing records remain reachable by their links.</p>
+            <p>Update by replacing the mod files with a newer release when one is published. Uninstall by removing the mod from your load line/folder; no separate cleanup step is required on your server, and existing records remain reachable by their links.</p>
           </div>
         </div>
       </div>

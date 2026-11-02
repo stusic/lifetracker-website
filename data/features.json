@@ -2,7 +2,7 @@
   {
     "title": "Automatic life tracking",
     "status": "available",
-    "desc": "Every character life is tracked server-side from spawn to confirmed death — no player setup required."
+    "desc": "Every character life is tracked server-side from spawn to confirmed death, with no player setup required."
   },
   {
     "title": "Unlisted share links",
@@ -12,7 +12,7 @@
   {
     "title": "Interactive route viewer",
     "status": "available",
-    "desc": "Pan, zoom up to 24x, and scrub or play back the full route on a timeline — on desktop or mobile."
+    "desc": "Pan, zoom up to 24x, and scrub or play back the full route on a timeline, on desktop or mobile."
   },
   {
     "title": "Death-cause detection",
@@ -47,6 +47,6 @@
   {
     "title": "Player-vs-player death attribution",
     "status": "under-consideration",
-    "desc": "Detecting and showing when a death was caused by another player. No reliable signal confirmed yet."
+    "desc": "Detecting and showing when a death was caused by another player."
   }
 ]
