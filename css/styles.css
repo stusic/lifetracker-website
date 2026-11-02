@@ -104,6 +104,7 @@ section:first-of-type { border-top: none; }
 .btn-ghost:hover { border-color: var(--accent); }
 .btn-sm { padding: 0.5em 0.9em; font-size: 0.85rem; }
 .btn[data-unavailable="true"] { opacity: 0.55; cursor: default; }
+.btn svg { flex-shrink: 0; }
 .btn .badge-soon {
   font-size: 0.68em; text-transform: uppercase; letter-spacing: 0.05em;
   background: rgba(255,255,255,0.08); padding: 0.15em 0.5em; border-radius: 999px;

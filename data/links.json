@@ -1,8 +1,8 @@
 {
-  "repo": { "label": "Source on GitHub", "href": "#", "available": false, "note": "Coming soon — not public yet" },
-  "issues": { "label": "Report an Issue", "href": "#", "available": false, "note": "Coming soon" },
-  "releases": { "label": "Releases", "href": "#", "available": false, "note": "Coming soon" },
-  "workshop": { "label": "Steam Workshop", "href": "#", "available": false, "note": "Published — link coming soon" },
-  "patreon": { "label": "Support on Patreon", "href": "#", "available": false, "note": "Coming soon" },
-  "contact": { "label": "Contact the Project", "href": "#", "available": false, "note": "Coming soon — add a contact method before launch" }
+  "repo": { "label": "Source on GitHub", "href": "#", "available": false, "note": "Coming soon — not public yet", "icon": "github" },
+  "workshop": { "label": "Client Mod on Steam Workshop", "href": "https://steamcommunity.com/sharedfiles/filedetails/?id=3832107447", "available": true, "note": "", "icon": "steam" },
+  "patreon": { "label": "Support on Patreon", "href": "#", "available": false, "note": "Coming soon", "icon": "patreon" },
+  "issues": { "label": "Report an Issue", "href": "#", "available": false, "note": "Coming soon", "icon": "bug" },
+  "releases": { "label": "Releases", "href": "#", "available": false, "note": "Coming soon", "icon": "tag" },
+  "contact": { "label": "Contact the Project", "href": "#", "available": false, "note": "Coming soon — add a contact method before launch", "icon": "mail" }
 }

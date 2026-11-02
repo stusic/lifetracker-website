@@ -8,7 +8,8 @@
         { "title": "Durable upload queue across server restarts", "status": "planned", "note": "Currently in-memory only — a server crash can lose a small window of unsent data. A disk-backed queue that survives restarts is planned." },
         { "title": "Starvation / dehydration death detection", "status": "under-consideration", "note": "An approach has been greenlit for testing but not yet built or confirmed reliable." },
         { "title": "Player-vs-player death detection", "status": "under-consideration", "note": "No reliable detection signal has been confirmed yet. No timeline is committed." },
-        { "title": "In-game opt-out command", "status": "planned", "note": "Players will be able to opt out of tracking with a chat command. Not yet built — see the Privacy section." }
+        { "title": "In-game opt-out command", "status": "planned", "note": "Players will be able to opt out of tracking with a chat command. Not yet built — see the Privacy section." },
+        { "title": "Mid-life event tracking", "status": "under-consideration", "note": "Capturing notable in-life moments — going unconscious, broken legs, weapon fire — not just spawn/death. No design work has started on this." }
       ]
     },
     {
@@ -17,7 +18,8 @@
         { "title": "Interactive route viewer", "status": "complete", "note": "Pan, zoom (up to 24x), reset view, and a scrub/playback timeline. Works on desktop and touch devices." },
         { "title": "Vector route rendering", "status": "complete", "note": "Routes stay crisp at any zoom level instead of blurring." },
         { "title": "Licensed map tiling", "status": "planned", "note": "The current map image is a flat photo that softens at extreme zoom. Real map tiling (e.g. Leaflet) would fix this once map licensing is resolved." },
-        { "title": "Official Chernarus map licensing", "status": "under-consideration", "note": "A licensing request to Bohemia Interactive is pending. Public map imagery depends on this being resolved." }
+        { "title": "Additional official and community map support", "status": "planned", "note": "Supporting more DayZ maps beyond Chernarus, both official Bohemia releases and popular community maps." },
+        { "title": "Additional map themes and colors", "status": "under-consideration", "note": "Alternate visual themes/color palettes for the route viewer. No design work has started on this." }
       ]
     },
     {
