@@ -1,7 +1,7 @@
 {
-  "repo": { "label": "Source on GitHub", "href": "#", "available": false, "note": "Not public yet", "icon": "github" },
+  "repo": { "label": "Source on GitHub", "href": "https://github.com/stusic/lifetracker-server-side-mod", "available": true, "note": "", "icon": "github" },
   "workshop": { "label": "Client Mod on Steam Workshop", "href": "https://steamcommunity.com/sharedfiles/filedetails/?id=3832107447", "available": true, "note": "", "icon": "steam" },
-  "patreon": { "label": "Support on Patreon", "href": "#", "available": false, "note": "Coming soon", "icon": "patreon" },
+  "patreon": { "label": "Support on Patreon", "href": "https://www.patreon.com/cw/LifeTracker_mod", "available": true, "note": "", "icon": "patreon" },
   "discord": { "label": "Join the Discord", "href": "https://discord.gg/rKWxHQEq33", "available": true, "note": "", "icon": "discord" },
   "releases": { "label": "Releases", "href": "#", "available": false, "note": "Coming soon", "icon": "tag" }
 }
