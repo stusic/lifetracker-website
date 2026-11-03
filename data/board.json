@@ -1,0 +1,18 @@
+{
+  "updatedAt": "2026-11-02T00:00:00.000Z",
+  "boardUrl": "https://github.com/users/stusic/projects/2",
+  "columns": [
+    {
+      "name": "Backlog",
+      "items": [
+        { "title": "Split starvation/dehydration out of the 'self' death cause", "url": "https://github.com/stusic/lifetracker-server-side-mod/issues/1", "number": 1, "repo": "stusic/lifetracker-server-side-mod", "closed": false },
+        { "title": "Detect PvP kills as a distinct death cause", "url": "https://github.com/stusic/lifetracker-server-side-mod/issues/2", "number": 2, "repo": "stusic/lifetracker-server-side-mod", "closed": false },
+        { "title": "Chat-based opt-out mechanism", "url": "https://github.com/stusic/lifetracker-server-side-mod/issues/3", "number": 3, "repo": "stusic/lifetracker-server-side-mod", "closed": false }
+      ]
+    },
+    { "name": "To Do", "items": [] },
+    { "name": "In Progress", "items": [] },
+    { "name": "In Testing", "items": [] },
+    { "name": "Released", "items": [] }
+  ]
+}

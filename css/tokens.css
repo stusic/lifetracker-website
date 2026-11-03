@@ -14,6 +14,12 @@
   --status-planned: #6ea8ff;
   --status-consider: #8a8f99;
 
+  --board-backlog: #8a8f99;
+  --board-todo: #6ea8ff;
+  --board-progress: #ffb224;
+  --board-testing: #b084f5;
+  --board-released: #3ddc84;
+
   --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-brand: 'Gugi', var(--font-body);
   --font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;

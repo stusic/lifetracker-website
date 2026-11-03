@@ -28,6 +28,8 @@
     tag: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.2" fill="currentColor"/></svg>'
   };
 
+  const slug = (s) => s.toLowerCase().replace(/\s+/g, '-');
+
   const statusLabel = (s) => ({
     available: 'Available',
     complete: 'Complete',
@@ -48,23 +50,28 @@
     `).join('');
   }).catch(() => {});
 
-  // ---------- roadmap ----------
-  load('data/roadmap.json').then(data => {
-    const grid = document.getElementById('roadmapGrid');
-    grid.innerHTML = data.categories.map(cat => `
-      <div class="roadmap-card">
-        <h3>${cat.name}</h3>
-        ${cat.items.map(item => `
-          <div class="roadmap-item">
-            <div class="roadmap-item-head">
-              <span class="title">${item.title}</span>
-              <span class="status-pill" data-status="${item.status}">${statusLabel(item.status)}</span>
-            </div>
-            <p>${item.note}</p>
-          </div>
-        `).join('')}
+  // ---------- roadmap board ----------
+  load('data/board.json').then(data => {
+    const grid = document.getElementById('roadmapBoard');
+    grid.innerHTML = data.columns.map(col => `
+      <div class="board-col" data-col="${slug(col.name)}">
+        <h3>${col.name}<span class="board-count">${col.items.length}</span></h3>
+        ${col.items.length ? col.items.map(item => `
+          <a class="board-card" href="${item.url}" target="_blank" rel="noopener">
+            <span class="board-card-title">${item.title}</span>
+            <span class="board-card-meta">#${item.number}</span>
+          </a>
+        `).join('') : '<p class="board-empty">Nothing here right now.</p>'}
       </div>
     `).join('');
+
+    const link = document.getElementById('boardLink');
+    if (link && data.boardUrl) link.href = data.boardUrl;
+
+    const updated = document.getElementById('boardUpdated');
+    if (updated && data.updatedAt) {
+      updated.textContent = `Updated ${new Date(data.updatedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}`;
+    }
   }).catch(() => {});
 
   // ---------- faq ----------

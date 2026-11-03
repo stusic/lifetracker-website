@@ -1,18 +1,55 @@
 # LifeTracker website
 
-The public marketing/informational site for LifeTracker (a DayZ server-side mod). Static site: plain HTML/CSS/JS, no build step, no backend, no dependency on the live LifeTracker API or database. If the backend or GitHub itself is down, this site still works.
+The public marketing/informational site for LifeTracker (a DayZ server-side mod). Static site: plain HTML/CSS/JS, no build step, no backend, no runtime dependency on the live LifeTracker API or the GitHub API. If the backend or GitHub itself is down, this site still works — see "Roadmap board" below for the one exception to how that's achieved.
 
 ## Structure
 
 - `index.html`: the single page, all sections.
 - `css/tokens.css`: design tokens (colors, fonts, spacing) shared with the approved LifeTracker visual language (`docs/vision/EXPERIENCE.md` in the main project repo).
 - `css/styles.css`: all layout/component styles.
-- `js/main.js`: loads the JSON content files and renders features/roadmap/FAQ/links.
+- `js/main.js`: loads the JSON content files and renders features/roadmap board/FAQ/links.
 - `data/*.json`: editable content. Update these without touching HTML/CSS:
   - `features.json`: feature list + status (`available` / `planned` / `under-consideration`).
-  - `roadmap.json`: roadmap categories and items.
+  - `board.json`: the roadmap board shown in the Roadmap section — generated at deploy time, see below. Don't hand-edit except as a fallback if the generator is broken.
   - `faq.json`: FAQ entries.
   - `links.json`: project links (GitHub, Workshop, Patreon, Discord, Releases). Flip `"available": true` and fill in `href` once each resource is real. `repo` and `workshop` are also rendered as a quick-link row in the Install section (`js/main.js`'s `installQuickLinks`), so updating them here updates both places.
+
+## Roadmap board
+
+The Roadmap section renders `data/board.json`, a compact on-brand board view
+of the real public GitHub Project — [LifeTracker Mod
+Roadmap](https://github.com/users/stusic/projects/2) on
+`stusic/lifetracker-server-side-mod` — instead of a hand-maintained list.
+
+`scripts/fetch-board.js` fetches the live project via GitHub's GraphQL API
+and overwrites `data/board.json` **at deploy time only**, as a step in
+`.github/workflows/deploy.yml`, before the static files are published. The
+deployed site itself never calls the GitHub API — visitors only ever load
+the plain JSON file, same as every other `data/*.json` file, which is what
+keeps the "still works if GitHub is down" property true for *visitors* even
+though the *build* now depends on GitHub being reachable. If the fetch
+fails (bad token, GitHub outage, rate limit) the build logs the error and
+deploys with whatever `data/board.json` was last committed, rather than
+failing the deploy.
+
+The workflow also runs on a schedule (every 6 hours) so the board stays
+current even on days with no code pushes.
+
+**Requires a `PROJECTS_TOKEN` repo secret** — a GitHub personal access token
+with read access to Projects, since Projects v2 data isn't readable via the
+default `GITHUB_TOKEN`. To set it up:
+
+1. Create a token: GitHub → Settings → Developer settings → Personal access
+   tokens. A fine-grained token scoped to the `stusic` account with
+   **"Projects" → Read-only** access is enough (the board is public, so no
+   issue/repo write access is needed). A classic token with the `read:project`
+   scope also works.
+2. Add it to this repo (`lifetracker-website`) as a secret named
+   `PROJECTS_TOKEN`: Settings → Secrets and variables → Actions → New
+   repository secret.
+
+Without that secret, deploys still succeed — they just skip refreshing the
+board and keep serving the last committed `data/board.json`.
 
 ## The Demo section embeds a real, live record
 
